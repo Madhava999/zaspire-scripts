@@ -81,8 +81,38 @@ namespace Zaspire.Scripts
             //Go to library index page
             GetWebDriver().Navigate().GoToUrl("http://zaspire.com/infoaspire/libraries");
 
-            //Click Library
-            AddNewLibraryHelper.ClickElement("Clickonlibrary");
+            //Select Default view
+            AddNewLibraryHelper.Select("SelectDefaultview", "Recently Modified");
+            AddNewLibraryHelper.WaitForWorkAround(1000);
+
+            //Select Default view
+            AddNewLibraryHelper.Select("SelectDefaultview", "My Team Libraries");
+            AddNewLibraryHelper.WaitForWorkAround(1000);
+
+            //Select Default view
+            AddNewLibraryHelper.Select("SelectDefaultview", "All Libraries");
+            AddNewLibraryHelper.WaitForWorkAround(1000);
+
+            //Go to library index page
+            GetWebDriver().Navigate().GoToUrl("http://zaspire.com/infoaspire/libraries");
+
+          //Select Default view
+            AddNewLibraryHelper.Select("SelectFilterbyGroups", "1");
+            AddNewLibraryHelper.WaitForWorkAround(1000);
+
+            //Select Default view
+            AddNewLibraryHelper.Select("SelectFilterbyGroups", "4");
+            AddNewLibraryHelper.WaitForWorkAround(1000);
+
+           //Go to library index page
+            GetWebDriver().Navigate().GoToUrl("http://zaspire.com/infoaspire/libraries");
+
+            //Select 20 records
+            AddNewLibraryHelper.Select("Recordsperpage", "20");
+            AddNewLibraryHelper.WaitForWorkAround(1000);
+
+            //Click on MasterCheckbox
+            AddNewLibraryHelper.ClickElement("Mastercheckbox");
 
 
 
