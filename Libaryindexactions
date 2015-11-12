@@ -113,6 +113,17 @@ namespace Zaspire.Scripts
 
             //Click on MasterCheckbox
             AddNewLibraryHelper.ClickElement("Mastercheckbox");
+            //Click Bulkupdate Button
+            AddNewLibraryHelper.ClickElement("Bulkupdatebutton");
+
+            //Select Bulkupdate option
+            AddNewLibraryHelper.ClickElement("SelectBulkupdate");
+
+            //Select category
+            AddNewLibraryHelper.Select("SelectCategory", "12175");
+
+            //Click on OK
+            AddNewLibraryHelper.ClickElement("Clickonupdate");
 
 
 
