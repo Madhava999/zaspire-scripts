@@ -1,0 +1,99 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Zaspire.PageHelpers;
+using Zaspire.PageHelpers.Com;
+
+namespace Zaspire.Scripts
+{
+    [TestClass]
+    public class SearchLibraries : DriverTestCase
+    {
+        [TestMethod]
+        public void Searchlibraries()
+        {
+            string[] username = null;
+            string[] password = null;
+
+            var oXMLData = new XMLParse();
+            oXMLData.LoadXML("../../Config/OrganizationSetting.xml");
+
+            username = oXMLData.getData("settings/Credentials", "username");
+            password = oXMLData.getData("settings/Credentials", "password");
+
+            //Initializing the objects
+            var loginHelper = new LoginHelper(GetWebDriver());
+            var AddNewLibraryHelper = new AddNewLibraryHelper(GetWebDriver());
+
+            //Variable
+
+            var DocumentName = "Test Library" + RandomNumber(1, 99);
+
+
+            //Login with valid username and password
+            Login(username[0], password[0]);
+            Console.WriteLine("Logged in as: " + username[0] + " / " + password[0]);
+
+            //Verify Page title
+            VerifyTitle("Dashboard");
+            Console.WriteLine("Redirected at Dashboard screen.");
+
+            //Click on libraries
+            AddNewLibraryHelper.ClickElement("ClickOnLibraries");
+
+            //Type input 
+            AddNewLibraryHelper.TypeText("Searchfield", "Libary7");
+            AddNewLibraryHelper.WaitForWorkAround(2000);
+
+            //Click on MasterCheckbox
+            AddNewLibraryHelper.ClickElement("Resetbutton");
+            AddNewLibraryHelper.WaitForWorkAround(1000);
+
+            //Type input 
+            AddNewLibraryHelper.TypeText("Searchfield", "Invoice");
+            AddNewLibraryHelper.WaitForWorkAround(2000);
+
+            //Click on MasterCheckbox
+            AddNewLibraryHelper.ClickElement("Resetbutton");
+            AddNewLibraryHelper.WaitForWorkAround(1000);
+
+            //Type input 
+            AddNewLibraryHelper.TypeText("Searchfield", "madhava");
+            AddNewLibraryHelper.WaitForWorkAround(2000);
+
+            //Click on MasterCheckbox
+            AddNewLibraryHelper.ClickElement("Resetbutton");
+            AddNewLibraryHelper.WaitForWorkAround(1000);
+
+            //Mouseover on Record
+            AddNewLibraryHelper.MouseHover("MouseoveronRecord");
+            AddNewLibraryHelper.WaitForWorkAround(1000);
+
+            //Click on Tooltip
+            AddNewLibraryHelper.ClickElement("ClickTooltip");
+            AddNewLibraryHelper.WaitForWorkAround(1000);
+
+            //Click on Tooltip
+            AddNewLibraryHelper.ClickElement("ClickEdit");
+            AddNewLibraryHelper.WaitForWorkAround(1000);
+
+            //Click on Save
+            AddNewLibraryHelper.ClickElement("ClickSave");
+            AddNewLibraryHelper.WaitForWorkAround(1000);
+
+
+
+
+            
+            
+           
+
+
+            
+
+        }
+
+    }
+
+}
