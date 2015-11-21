@@ -1,2 +1,3 @@
+This is new text for git 
 # zaspire-scripts
-Zaspire Scripts
+Zaspire Script
