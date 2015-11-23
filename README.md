@@ -1,3 +1,1 @@
-This is new text for git 
-# zaspire-scripts
-Zaspire Script
+This is testing message for github for adding text in a file
